@@ -21,7 +21,7 @@ python check_user.py <date> <username>
 You'll need to use some sort of strategy to export the environment variables in `.env.` I use [autoenv](https://github.com/kennethreitz/autoenv). Then:
 
 ``` sh
-git clone git@github.com:18F/tock-manangement-reports.git
+git clone git@github.com:18F/tock-management-reports.git
 cd tock-management-reports
 cp .env.example .env
 pyvenv env
