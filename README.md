@@ -16,9 +16,19 @@ To check an individual, use `check_user.py` with a `YYYY-MM-DD` date and a usern
 python check_user.py 2016-10-23 vladlen.zvenyach
 ```
 
+## Docker Usage
+
+The easiest way to use the script is to use Docker.
+
+First, make sure to copy the `.env.example` file into `.env`. Then, use is as simple as:
+
+``` sh
+docker-compose run app python run.py <date>
+```
+
 ## Installation
 
-You'll need to use some sort of strategy to export the environment variables in `.env.` I use [autoenv](https://github.com/kennethreitz/autoenv). Then:
+If you are not using Docker, you'll need to use some sort of strategy to export the environment variables in `.env.` I use [autoenv](https://github.com/kennethreitz/autoenv). Then:
 
 ``` sh
 git clone git@github.com:18F/tock-management-reports.git
