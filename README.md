@@ -24,7 +24,7 @@ You'll need to use some sort of strategy to export the environment variables in 
 git clone git@github.com:18F/tock-management-reports.git
 cd tock-management-reports
 cp .env.example .env
-pyenv env
+python -m venv env
 source env/bin/activate
 pip install -r requirements.txt
 ```
