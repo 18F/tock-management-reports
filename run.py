@@ -1,18 +1,8 @@
+from lib.timecards import Timecards
 import pandas as pd
-import requests
-import json
-import os
 import warnings
 warnings.filterwarnings('ignore')
 import re
-import pdb
-
-def get_timecards(start_date):
-    headers = {'Authorization': 'Token ' + os.environ.get('TOCK_API_KEY')}
-    url = 'https://tock.18f.gov/api/timecards.json?date=' + str(start_date)
-    tock_data = requests.get(url, headers=headers).json()
-    timecards = pd.read_json(json.dumps(tock_data))
-    return timecards
 
 def remove_gsa_gov(email):
     return re.sub('@gsa.gov', '', email).lower()
@@ -66,8 +56,9 @@ if __name__ == "__main__":
 
     start_date = sys.argv[1]
 
-    timecards = get_timecards(start_date)
+    timecards = Timecards(start_date).timecards
     roster = get_roster(timecards)
+
     timecards["unit"] = timecards["user"].apply(lambda x: get_employee_unit(x, roster))
     timecards["18FPL"] = ~timecards["project_name"].apply(lambda x: remove_non_billable_projects(x))
 

@@ -1,3 +1,6 @@
 .env
 data/*.csv
 sandbox
+.cache/*
+**/__pycache__/**
+fixtures/**
