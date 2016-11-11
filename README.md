@@ -18,6 +18,8 @@ python check_user.py 2016-10-23 vladlen.zvenyach
 
 ## Installation
 
+The TOCK_API_KEY variable in the .env file is not a real Tock API key. The first step is to get a valid API key from your Tock administrator.
+
 You'll need to use some sort of strategy to export the environment variables in `.env.` I use [autoenv](https://github.com/kennethreitz/autoenv). Then:
 
 ``` sh
