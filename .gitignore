@@ -4,3 +4,4 @@ sandbox
 .cache/*
 **/__pycache__/**
 fixtures/**
+*.pyc
